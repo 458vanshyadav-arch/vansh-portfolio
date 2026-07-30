@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Video Editor Portfolio</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      background-color: #0b0b0f;
+      color: #ffffff;
+    }
+    .section-video-bg {
+      position: relative;
+      overflow: hidden;
+    }
+    .section-video-bg video {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+      z-index: 0;
+      transform: translate(-50%, -50%);
+      object-fit: cover;
+    }
+    .section-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(11, 11, 15, 0.78);
+      z-index: 1;
+    }
+    .section-content {
+      position: relative;
+      z-index: 2;
+    }
+  </style>
+</head>
+<body class="font-sans antialiased text-white bg-[#0b0b0f]">
+
+  <!-- ================= NAVBAR ================= -->
+  <header class="flex justify-between items-center py-4 px-6 md:px-16 border-b border-gray-800 sticky top-0 bg-[#0b0b0f]/90 backdrop-blur z-50">
+    <div class="text-2xl font-black tracking-wider text-indigo-400">
+      PORTFOLIO<span class="text-white">.</span>
+    </div>
+
+    <div class="flex items-center space-x-4">
+      <a href="#contact" class="bg-indigo-600 hover:bg-indigo-700 text-white px-5 py-2 rounded-full font-bold text-sm transition">
+        Hire Me
+      </a>
+      <button id="menu-btn" type="button" class="text-white p-2 focus:outline-none bg-gray-800 hover:bg-gray-700 rounded-lg transition">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobile-menu" class="hidden absolute top-16 right-6 bg-gray-900 border border-gray-800 rounded-2xl shadow-2xl p-5 flex flex-col space-y-4 w-56 z-50 text-left">
+      <button type="button" data-category="fitness" class="category-btn text-left text-gray-300 hover:text-indigo-400 font-semibold transition">🏋️‍♂️ Fitness</button>
+      <button type="button" data-category="tech" class="category-btn text-left text-gray-300 hover:text-indigo-400 font-semibold transition">💻 Tech Reels</button>
+      <button type="button" data-category="youtube" class="category-btn text-left text-gray-300 hover:text-indigo-400 font-semibold transition">🎬 YouTube Vlogs</button>
+      <button type="button" data-category="reels" class="category-btn text-left text-gray-300 hover:text-indigo-400 font-semibold transition">📱 Reels & Shorts</button>
+      <a href="#clients" class="menu-link text-gray-300 hover:text-indigo-400 font-semibold transition">⭐ Client Reviews</a>
+      <a href="#contact" class="menu-link text-gray-300 hover:text-indigo-400 font-semibold transition">✉️ Contact</a>
+    </div>
+  </header>
+
+
+  <!-- ================= SECTION 1: HERO & PROFILE ================= -->
+  <section class="section-video-bg py-20 px-6 md:px-16 border-b border-gray-800 min-h-[85vh] flex items-center">
+    <video autoplay loop muted playsinline preload="auto">
+      <source src="bg-hero.mp4" type="video/mp4">
+    </video>
+    <div class="section-overlay"></div>
+
+    <div class="section-content max-w-4xl mx-auto w-full">
+      <div class="space-y-6 text-left">
+        <div>
+          <h2 class="text-xl md:text-2xl font-extrabold text-indigo-400 tracking-wide uppercase mb-2">
+            Hi, I'm Vansh 👋
+          </h2>
+          <span class="inline-block bg-indigo-950/90 text-indigo-400 border border-indigo-800 text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-widest backdrop-blur">
+            Professional Video Editor & Storyteller
+          </span>
+        </div>
+        
+        <h1 class="text-3xl md:text-6xl font-black leading-tight">
+          Turning Raw Footage Into <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400">High-Retention Visual Art</span>
+        </h1>
+        
+        <p class="text-gray-300 text-base md:text-xl leading-relaxed max-w-3xl">
+          I specialize in transforming raw footage into captivating visual content through dynamic pacing, aesthetic visual grading, immersive sound design, and high-retention kinetic captions.
+        </p>
+
+        <div class="space-y-3 pt-2">
+          <p class="text-xs font-bold uppercase tracking-wider text-gray-400">Core Editing Expertise:</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="bg-gray-900/90 border border-gray-700 text-indigo-300 text-xs font-semibold px-3 py-1.5 rounded-lg backdrop-blur">⚡ Fast-Paced Reel Cuts</span>
+            <span class="bg-gray-900/90 border border-gray-700 text-purple-300 text-xs font-semibold px-3 py-1.5 rounded-lg backdrop-blur">🎨 Color Grading</span>
+            <span class="bg-gray-900/90 border border-gray-700 text-blue-300 text-xs font-semibold px-3 py-1.5 rounded-lg backdrop-blur">🎵 Sound Design</span>
+            <span class="bg-gray-900/90 border border-gray-700 text-emerald-300 text-xs font-semibold px-3 py-1.5 rounded-lg backdrop-blur">🔥 Kinetic Captions</span>
+          </div>
+        </div>
+
+        <div class="pt-2 flex flex-wrap items-center gap-2 text-xs font-bold text-gray-300">
+          <span>Softwares:</span>
+          <span class="text-white bg-indigo-950/90 border border-indigo-800 px-3 py-1 rounded-md">Premiere Pro</span>
+          <span class="text-white bg-indigo-950/90 border border-indigo-800 px-3 py-1 rounded-md">After Effects</span>
+          <span class="text-white bg-indigo-950/90 border border-indigo-800 px-3 py-1 rounded-md">DaVinci Resolve</span>
+          <span class="text-white bg-indigo-950/90 border border-indigo-800 px-3 py-1 rounded-md">CapCut PC</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ================= SECTION 2: CATEGORY BANNERS ================= -->
+  <section class="py-16 px-6 md:px-16 border-b border-gray-800 bg-[#0b0b0f]">
+    <div class="max-w-6xl mx-auto text-center">
+      <div class="mb-8">
+        <h2 class="text-2xl md:text-4xl font-black text-white">Select a Category Banner Below</h2>
+        <p class="text-gray-300 text-sm mt-2">Click on any banner to view edits in that specific category</p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div data-category="fitness" class="category-btn group relative rounded-2xl overflow-hidden cursor-pointer border border-gray-700 hover:border-indigo-500 transition duration-300 h-48 bg-indigo-950/40 p-6 flex flex-col justify-end text-left">
+          <div class="relative z-10 pointer-events-none">
+            <span class="text-4xl mb-2 block">🏋️‍♂️</span>
+            <h3 class="text-2xl font-black text-white group-hover:text-indigo-400 transition">Fitness Edits</h3>
+            <p class="text-xs text-gray-300 mt-1">Gym Reels & Beat Sync</p>
+          </div>
+        </div>
+
+        <div data-category="tech" class="category-btn group relative rounded-2xl overflow-hidden cursor-pointer border border-gray-700 hover:border-purple-500 transition duration-300 h-48 bg-purple-950/40 p-6 flex flex-col justify-end text-left">
+          <div class="relative z-10 pointer-events-none">
+            <span class="text-4xl mb-2 block">💻</span>
+            <h3 class="text-2xl font-black text-white group-hover:text-purple-400 transition">Tech Reels</h3>
+            <p class="text-xs text-gray-300 mt-1">Gadgets & AI Overlays</p>
+          </div>
+        </div>
+
+        <div data-category="youtube" class="category-btn group relative rounded-2xl overflow-hidden cursor-pointer border border-gray-700 hover:border-blue-500 transition duration-300 h-48 bg-blue-950/40 p-6 flex flex-col justify-end text-left">
+          <div class="relative z-10 pointer-events-none">
+            <span class="text-4xl mb-2 block">🎬</span>
+            <h3 class="text-2xl font-black text-white group-hover:text-blue-400 transition">Story Telling Reels and Shorts</h3>
+            <p class="text-xs text-gray-300 mt-1">Cinematic Storytelling</p>
+          </div>
+        </div>
+
+        <div data-category="reels" class="category-btn group relative rounded-2xl overflow-hidden cursor-pointer border border-gray-700 hover:border-emerald-500 transition duration-300 h-48 bg-emerald-950/40 p-6 flex flex-col justify-end text-left">
+          <div class="relative z-10 pointer-events-none">
+            <span class="text-4xl mb-2 block">📱</span>
+            <h3 class="text-2xl font-black text-white group-hover:text-emerald-400 transition">Reels & Shorts</h3>
+            <p class="text-xs text-gray-300 mt-1">Viral Short-Form Edits</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ================= SECTION 3: VIDEO SHOWCASE ================= -->
+  <section id="video-display" class="py-16 px-6 md:px-16 border-b border-gray-800 bg-[#0b0b0f]">
+    <div class="max-w-6xl mx-auto">
+      
+      <!-- INITIAL PLACEHOLDER -->
+      <div id="no-selection-msg" class="text-center py-12 border border-dashed border-gray-800 rounded-3xl bg-gray-900/30">
+        <span class="text-4xl mb-3 block">👇</span>
+        <h3 class="text-xl font-bold text-gray-300">Click any category banner above to explore work samples</h3>
+      </div>
+
+      <!-- FITNESS SECTION -->
+      <div id="fitness-sec" class="category-block hidden">
+        <div class="mb-8">
+          <span class="text-indigo-400 text-xs font-bold uppercase tracking-wider">Category Showcase</span>
+          <h2 class="text-3xl font-extrabold border-l-4 border-indigo-500 pl-3 mt-1">Fitness & Gym Edits</h2>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="bg-gray-900/80 rounded-2xl overflow-hidden border border-gray-700">
+            <div class="aspect-[9/16] bg-black">
+              <video controls playsinline preload="metadata" class="w-full h-full object-cover portfolio-video"><source src="fitness1.mp4" type="video/mp4"></video>
+            </div>
+          </div>
+          <div class="bg-gray-900/80 rounded-2xl overflow-hidden border border-gray-700">
+            <div class="aspect-[9/16] bg-black">
+              <video controls playsinline preload="metadata" class="w-full h-full object-cover portfolio-video"><source src="fitness2.mp4" type="video/mp4"></video>
+            </div>
+          </div>
+          <div class="bg-gray-900/80 rounded-2xl overflow-hidden border border-gray-700">
+            <div class="aspect-[9/16] bg-black">
+              <video controls playsinline preload="metadata" class="w-full h-full object-cover portfolio-video"><source src="fitness3.mp4" type="video/mp4"></video>
+            </div>
+          </div>
+          <div class="bg-gray-900/80 rounded-2xl overflow-hidden border border-gray-700">
+            <div class="aspect-[9/16] bg-black">
+              <video controls playsinline preload="metadata" class="w-full h-full object-cover portfolio-video"><source src="fitness4.mp4" type="video/mp4"></video>
+            </div>
+          </div>
+          <div class="bg-gray-900/80 rounded-2xl overflow-hidden border border-gray-700">
+            <div class="aspect-[9/16] bg-black">
+              <video controls playsinline preload="metadata" class="w-full h-full object-cover portfolio-video"><source src="fitness5.mp4" type="video/mp4"></video>
+            </div>
+          </div>
+          <div class="bg-gray-900/80 rounded-2xl overflow-hidden border border-gray-700">
+            <div class="aspect-[9/16] bg-black">
+              <video controls playsinline preload="metadata" class="w-full h-full object-cover portfolio-video"><source src="fitness6.mp4" type="video/mp4"></video>
+            </div>
+          </div>
+          <div class="bg-gray-900/80 rounded-2xl overflow-hidden border border-gray-700">
+            <div class="aspect-[9/16] bg-black">
+              <video controls playsinline preload="metadata" class="w-full h-full object-cover portfolio-video"><source src="fitness7.mp4" type="video/mp4"></video>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TECH SECTION -->
+      <div id="tech-sec" class="category-block hidden">
+        <div class="mb-8">
+          <span class="text-purple-400 text-xs font-bold uppercase tracking-wider">Category Showcase</span>
+          <h2 class="text-3xl font-extrabold border-l-4 border-purple-500 pl-3 mt-1">Tech & Gadget Reels</h2>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="bg-gray-900/80 rounded-2xl overflow-hidden border border-gray-700">
+            <div class="aspect-[9/16] bg-black">
+              <video controls playsinline preload="metadata" class="w-full h-full object-cover portfolio-video"><source src="tech1.mp4" type="video/mp4"></video>
+            </div>
+          </div>
+          <div class="bg-gray-900/80 rounded-2xl overflow-hidden border border-gray-700">
+            <div class="aspect-[9/16] bg-black">
+              <video controls playsinline preload="metadata" class="w-full h-full object-cover portfolio-video"><source src="tech2.mp4" type="video/mp4"></video>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- STORY TELLING SECTION -->
+      <div id="youtube-sec" class="category-block hidden">
+        <div class="mb-8">
+          <span class="text-blue-400 text-xs font-bold uppercase tracking-wider">Category Showcase</span>
+          <h2 class="text-3xl font-extrabold border-l-4 border-blue-500 pl-3 mt-1">Story Telling Reels and Shorts</h2>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="bg-gray-900/80 rounded-2xl overflow-hidden border border-gray-700">
+            <div class="aspect-[9/16] bg-black">
+              <video controls playsinline preload="metadata" class="w-full h-full object-cover portfolio-video"><source src="vlog1.mp4" type="video/mp4"></video>
+            </div>
+          </div>
+          <div class="bg-gray-900/80 rounded-2xl overflow-hidden border border-gray-700">
+            <div class="aspect-[9/16] bg-black">
+              <video controls playsinline preload="metadata" class="w-full h-full object-cover portfolio-video"><source src="vlog2.mp4" type="video/mp4"></video>
+            </div>
+          </div>
+          <div class="bg-gray-900/80 rounded-2xl overflow-hidden border border-gray-700">
+            <div class="aspect-[9/16] bg-black">
+              <video controls playsinline preload="metadata" class="w-full h-full object-cover portfolio-video"><source src="vlog3.mp4" type="video/mp4"></video>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- REELS & SHORTS SECTION -->
+      <div id="reels-sec" class="category-block hidden">
+        <div class="mb-8">
+          <span class="text-emerald-400 text-xs font-bold uppercase tracking-wider">Category Showcase</span>
+          <h2 class="text-3xl font-extrabold border-l-4 border-emerald-500 pl-3 mt-1">Trending Reels & Shorts</h2>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="bg-gray-900/80 rounded-2xl overflow-hidden border border-gray-700">
+            <div class="aspect-[9/16] bg-black">
+              <video controls playsinline preload="metadata" class="w-full h-full object-cover portfolio-video"><source src="reel1.mp4" type="video/mp4"></video>
+            </div>
+          </div>
+          <div class="bg-gray-900/80 rounded-2xl overflow-hidden border border-gray-700">
+            <div class="aspect-[9/16] bg-black">
+              <video controls playsinline preload="metadata" class="w-full h-full object-cover portfolio-video"><source src="reel2.mp4" type="video/mp4"></video>
+            </div>
+          </div>
+          <div class="bg-gray-900/80 rounded-2xl overflow-hidden border border-gray-700">
+            <div class="aspect-[9/16] bg-black">
+              <video controls playsinline preload="metadata" class="w-full h-full object-cover portfolio-video"><source src="reel3.mp4" type="video/mp4"></video>
+            </div>
+          </div>
+          <div class="bg-gray-900/80 rounded-2xl overflow-hidden border border-gray-700">
+            <div class="aspect-[9/16] bg-black">
+              <video controls playsinline preload="metadata" class="w-full h-full object-cover portfolio-video"><source src="reel4.mp4" type="video/mp4"></video>
+            </div>
+          </div>
+          <div class="bg-gray-900/80 rounded-2xl overflow-hidden border border-gray-700">
+            <div class="aspect-[9/16] bg-black">
+              <video controls playsinline preload="metadata" class="w-full h-full object-cover portfolio-video"><source src="reel5.mp4" type="video/mp4"></video>
+            </div>
+          </div>
+          <div class="bg-gray-900/80 rounded-2xl overflow-hidden border border-gray-700">
+            <div class="aspect-[9/16] bg-black">
+              <video controls playsinline preload="metadata" class="w-full h-full object-cover portfolio-video"><source src="reel6.mp4" type="video/mp4"></video>
+            </div>
+          </div>
+          <div class="bg-gray-900/80 rounded-2xl overflow-hidden border border-gray-700">
+            <div class="aspect-[9/16] bg-black">
+              <video controls playsinline preload="metadata" class="w-full h-full object-cover portfolio-video"><source src="reel7.mp4" type="video/mp4"></video>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ================= SECTION 4: PERMANENT CLIENT REVIEWS ================= -->
+  <section id="clients" class="py-20 px-6 md:px-16 border-b border-gray-800 bg-[#0b0b0f]">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-12">
+        <span class="text-indigo-400 text-xs font-bold uppercase tracking-widest bg-indigo-950/80 border border-indigo-800 px-4 py-1.5 rounded-full">
+          Client Feedback
+        </span>
+        <h2 class="text-3xl md:text-5xl font-black mt-3">What My Permanent Clients Say</h2>
+        <p class="text-gray-300 text-sm md:text-base mt-2 max-w-xl mx-auto">
+          Verified reviews and account links from creators I manage content for on a regular basis.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        
+        <!-- PERMANENT CLIENT 1 CARD (YOUTUBE UPDATED) -->
+        <div class="bg-gray-900/80 border border-gray-700 rounded-2xl p-6 flex flex-col justify-between hover:border-indigo-500 transition duration-300 shadow-xl">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="flex text-amber-400 space-x-1 text-xl">
+                ★★★★★
+              </div>
+              <span class="text-xs bg-indigo-950 text-indigo-300 border border-indigo-700 px-3 py-1 rounded-full font-bold uppercase tracking-wider">
+                🔒 Permanent Client
+              </span>
+            </div>
+
+            <blockquote class="text-gray-200 font-medium text-sm md:text-base leading-relaxed mb-6">
+              "Working with Vansh on a long-term basis has completely streamlined my content pipeline. The video pacing, sound design, and retainment strategy doubled our engagement rates!"
+            </blockquote>
+          </div>
+
+          <div class="flex items-center justify-between border-t border-gray-800 pt-4">
+            <div>
+              <h4 class="font-bold text-white text-base">STORY TELLING AND GROWTH TIPS</h4>
+              <p class="text-xs text-gray-400">Regular Video & Reel Production</p>
+            </div>
+            <a href="https://youtube.com/@yt-speedrun?si=Wa3Fuf_OI8pDthqg" target="_blank" rel="noopener noreferrer" class="inline-flex items-center space-x-2 bg-red-600 hover:bg-red-700 text-white text-xs font-bold px-4 py-2 rounded-lg transition shadow">
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+              <span>View Channel</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- PERMANENT CLIENT 2 CARD -->
+        <div class="bg-gray-900/80 border border-gray-700 rounded-2xl p-6 flex flex-col justify-between hover:border-purple-500 transition duration-300 shadow-xl">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="flex text-amber-400 space-x-1 text-xl">
+                ★★★★★
+              </div>
+              <span class="text-xs bg-indigo-950 text-indigo-300 border border-indigo-700 px-3 py-1 rounded-full font-bold uppercase tracking-wider">
+                🔒 Permanent Client
+              </span>
+            </div>
+
+            <blockquote class="text-gray-200 font-medium text-sm md:text-base leading-relaxed mb-6">
+              "Exceptional turnaround speed and brilliant eye for visual effects & cinematic video. Vansh handles all our daily YouTube Shorts and Instagram reels effortlessly."
+            </blockquote>
+          </div>
+
+          <div class="flex items-center justify-between border-t border-gray-800 pt-4">
+            <div>
+              <h4 class="font-bold text-white text-base">DANCE AND CINEMATIC REELS</h4>
+              <p class="text-xs text-gray-400">Ongoing Editing Partner</p>
+            </div>
+            <a href="https://www.instagram.com/neharojwal/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center space-x-2 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white text-xs font-bold px-4 py-2 rounded-lg transition shadow">
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+              <span>View Account</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ================= SECTION 5: CONTACT & FOOTER ================= -->
+  <section id="contact" class="py-24 px-6 md:px-16 text-center bg-[#0b0b0f]">
+    <div class="max-w-xl mx-auto">
+      <h2 class="text-3xl md:text-5xl font-black mb-4">Let's Work Together</h2>
+      <p class="text-gray-300 max-w-lg mx-auto mb-8">Ready to elevate your content quality? Reach out directly via WhatsApp or Email.</p>
+      
+      <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+        <a href="https://wa.me/919728074758?text=Hi,%20I%20want%20to%20hire%20you%20for%20video%20editing." target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-3.5 rounded-full font-bold text-base inline-flex items-center justify-center space-x-2 transition shadow-2xl">
+          <span>💬 Chat on WhatsApp</span>
+        </a>
+
+        <a href="mailto:yvansh458@gmail.com?subject=Video%20Editing%20Inquiry&body=Hi,%20I%20checked%20your%20portfolio%20and%20want%20to%20discuss%20a%20project." class="w-full sm:w-auto bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-3.5 rounded-full font-bold text-base inline-flex items-center justify-center space-x-2 transition shadow-2xl">
+          <span>✉️ Send An Email</span>
+        </a>
+      </div>
+
+      <div class="mt-8 text-sm text-gray-300 space-y-2 bg-gray-900/60 p-4 rounded-xl border border-gray-800 inline-block w-full">
+        <p>📱 WhatsApp / Phone: <span class="text-white font-semibold">+91 9728074758</span></p>
+        <p>✉️ Email Address: <span class="text-white font-semibold">yvansh458@gmail.com</span></p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ================= JAVASCRIPT ================= -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const menuBtn = document.getElementById('menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const noSelectionMsg = document.getElementById('no-selection-msg');
+      const allVideos = document.querySelectorAll('.portfolio-video');
+
+      // 1. Toggle Mobile Menu
+      if (menuBtn && mobileMenu) {
+        menuBtn.addEventListener('click', function(e) {
+          e.stopPropagation();
+          mobileMenu.classList.toggle('hidden');
+        });
+      }
+
+      // 2. Hide Mobile Menu on Outside Click
+      document.addEventListener('click', function(e) {
+        if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+          if (!mobileMenu.contains(e.target) && !menuBtn.contains(e.target)) {
+            mobileMenu.classList.add('hidden');
+          }
+        }
+      });
+
+      // 3. Category Switching Logic
+      const categoryBtns = document.querySelectorAll('.category-btn');
+      categoryBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+          const category = this.getAttribute('data-category');
+          
+          if (mobileMenu) mobileMenu.classList.add('hidden');
+
+          // Pause all active playing videos before switching categories
+          allVideos.forEach(v => v.pause());
+
+          // Hide initial message
+          if (noSelectionMsg) noSelectionMsg.classList.add('hidden');
+
+          // Hide all category blocks
+          const blocks = document.querySelectorAll('.category-block');
+          blocks.forEach(block => block.classList.add('hidden'));
+
+          // Show requested category block
+          const targetBlock = document.getElementById(category + '-sec');
+          if (targetBlock) {
+            targetBlock.classList.remove('hidden');
+          }
+
+          // Smooth scroll to showcase section
+          const videoDisplaySection = document.getElementById('video-display');
+          if (videoDisplaySection) {
+            videoDisplaySection.scrollIntoView({ behavior: 'smooth' });
+          }
+        });
+      });
+
+      // 4. Play Only One Video At A Time Logic
+      allVideos.forEach(video => {
+        video.addEventListener('play', function() {
+          allVideos.forEach(v => {
+            if (v !== video) {
+              v.pause();
+            }
+          });
+        });
+      });
+
+      // 5. Close Menu on Link Clicks
+      const menuLinks = document.querySelectorAll('.menu-link');
+      menuLinks.forEach(link => {
+        link.addEventListener('click', function() {
+          if (mobileMenu) mobileMenu.classList.add('hidden');
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>
